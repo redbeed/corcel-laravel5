@@ -8,11 +8,10 @@
 
 namespace Corcel;
 
-use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Post extends Eloquent
+class Post extends CorcelModel
 {
     const CREATED_AT = 'post_date';
     const UPDATED_AT = 'post_modified';
@@ -59,12 +58,12 @@ class Post extends Eloquent
 
     /**
     *   Author relationship
-    * 
+    *
     *   @return Illuminate\Database\Eloquent\Collection
     */
     public function author(){
 
-        return $this->belongsTo('\Corcel\Author', 'ID');
+        return $this->belongsTo('Corcel\Author', 'post_author', 'ID');
 
     }
 

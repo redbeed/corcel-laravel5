@@ -2,9 +2,7 @@
 
 namespace Corcel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class TermTaxonomy extends Model
+class TermTaxonomy extends CorcelModel
 {
     protected $table = 'term_taxonomy';
     protected $primaryKey = 'term_taxonomy_id';
@@ -19,6 +17,10 @@ class TermTaxonomy extends Model
     {
         return $this->belongsTo('Corcel\TermTaxonomy', 'parent');
     }
+
+	public function childTerms(){
+		return $this->hasMany('Corcel\TermTaxonomy', 'parent', 'term_id');
+	}
 
     public function posts()
     {

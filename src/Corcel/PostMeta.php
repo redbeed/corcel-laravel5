@@ -8,9 +8,7 @@
 
 namespace Corcel;
 
-use Illuminate\Database\Eloquent\Model as Eloquent;
-
-class PostMeta extends Eloquent
+class PostMeta extends CorcelModel
 {
     protected $table = 'postmeta';
     protected $primaryKey = 'meta_id';

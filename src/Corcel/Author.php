@@ -1,6 +1,4 @@
-namespace Corcel;
-
-use Illuminate\Database\Eloquent\Model as Eloquent;
+<?php namespace Corcel;
 
 /**
  * Author model
@@ -8,7 +6,7 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
  * @author Ashwin Sureshkumar<ashwin.sureshkumar@gmail.com>
  */
 
-class Author extends Eloquent {
+class Author extends CorcelModel {
 
     protected $table = 'users';
     protected $primaryKey = 'ID';
@@ -25,3 +23,5 @@ class Author extends Eloquent {
         return $this->hasMany('Corcel\Post', 'post_author');
     }
 }
+
+?>
