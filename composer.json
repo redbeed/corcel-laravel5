@@ -4,6 +4,7 @@
     "description": "Wrappers to collect data from Wordpress databases",
     "homepage": "http://github.com/jgrossi/corcel",
     "license": "MIT",
+    "type":"library",
     "authors": [
         {
             "name": "Junior Grossi",
@@ -20,10 +21,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Corcel": "src/"
-        },
-        "classmap": [
-            "models"
-        ]
+            "Corcel\\": "src/"
+        }   
     }
 }
