@@ -7,6 +7,8 @@ use Illuminate\Support\ServiceProvider;
 class CorcelServiceProvider extends ServiceProvider
 {
 
+	protected $connection = '';
+
 	/**
      * Bootstrap the application services.
      *

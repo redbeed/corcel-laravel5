@@ -1,14 +1,14 @@
 <?php
 
-use Corcel\Post;
-use Corcel\Page;
+use Corcel\Models\Post;
+use Corcel\Models\Page;
 
 class PostTest extends PHPUnit_Framework_TestCase
 {
     public function testPostConstructor()
     {
         $post = new Post;
-        $this->assertTrue($post instanceof \Corcel\Post);
+        $this->assertTrue($post instanceof \Corcel\Models\Post);
     }
 
     public function testPostId()

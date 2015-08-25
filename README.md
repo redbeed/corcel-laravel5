@@ -1,7 +1,6 @@
 Wordpress Corcel
 ================
-
-*Corcel is under development, but it's working :D*
+*This is a fork of [jgrossi/corcel](https://github.com/jgrossi/corcel)*
 
 --
 
@@ -14,34 +13,26 @@ This way you can use Wordpress as back-end, to insert posts, custom types, etc, 
 To install Corcel just create a `composer.json` file and add:
 
     "require": {
-        "jgrossi/corcel": "dev-master"
+        "redbeed/corcel-laravel5": "dev-master"
     },
 
-After that run `composer install` and wait.
+After that run `composer update` and wait.
 
 ## Usage
 
-First you must include the Composer `autoload` file.
+First you must add the service provider to to `config/app.php` under `providers`
 
-    require __DIR__ . '/vendor/autoload.php';
+    Corcel\CorcelServiceProvider::class
 
-Now you must set your Wordpress database params:
+Now you must publish the Assets:
 
-    $params = array(
-        'database'  => 'database_name',
-        'username'  => 'username',
-        'password'  => 'pa$$word',
-        'prefix'    => 'wp_' // default prefix is 'wp_', you can change to your own prefix
-    );
-    Corcel\Database::connect($params);
+    php artisan vendor:publish
 
-You can specify all Eloquent params, but some are default (but you can override them).
+You can specify the Connection in the corcel config file.
 
-    'driver'    => 'mysql',
-    'host'      => 'localhost',
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix'    => 'wp_', // Specify the prefix for wordpress tables, default prefix is 'wp_'
+    config/corcel.php
+
+
 
 ### Posts
 
@@ -155,11 +146,6 @@ Getting the attachment and/or revision from a `Post` or `Page`.
     $post = Post::slug('test')->with('revision')->first();
     // get all revisions from a post or page
     print_r($post->revision);
-
-
-## TODO
-
-I'm already working with Wordpress comments integration.
 
 ## Licence
 
