@@ -24,11 +24,11 @@ First you must add the service provider to to `config/app.php` under `providers`
 
     Corcel\CorcelServiceProvider::class
 
-Now you must publish the Assets:
+Now you must publish the assets:
 
     php artisan vendor:publish
 
-You can specify the Connection in the corcel config file.
+You can specify the connection in the corcel config file.
 
     config/corcel.php
 
